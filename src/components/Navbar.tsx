@@ -1,18 +1,29 @@
 import React from "react"
 import { Link } from "react-router-dom"
 
+const headerNav = [
+  {
+    display: "Indonesia News",
+    path: "/id",
+  },
+  {
+    display: "United Stated News",
+    path: "/us",
+  },
+]
+
 const Navbar: React.FC = () => {
   return (
     <div
       style={{
         display: "flex",
-        justifyContent: "space-between",
+        justifyContent: "center",
         alignItems: "center",
-        padding: "1rem",
+        padding: "0.5rem",
         backgroundColor: "#333",
         color: "#fff",
         fontSize: "1.2rem",
-        borderRadius: "1rem",
+        borderRadius: "0.5rem",
       }}
     >
       <Link
@@ -25,6 +36,29 @@ const Navbar: React.FC = () => {
       >
         NewsAPI
       </Link>
+      <ul
+        style={{
+          display: "flex",
+          alignItems: "center",
+          listStyle: "none",
+        }}
+      >
+        {headerNav.map((e, i) => (
+          <li
+            key={i}
+            style={{
+              marginRight: "1rem",
+            }}
+          >
+            <Link
+              to={e.path}
+              style={{ color: "white", textDecoration: "none" }}
+            >
+              {e.display}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }

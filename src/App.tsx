@@ -1,14 +1,20 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import "./App.css"
 import Navbar from "./components/Navbar"
 import NewsList from "./components/NewsList"
+import Indonesia from "./components/Indonesia"
+import UnitedStates from "./components/UnitedStates"
 
 function App() {
   return (
-    <BrowserRouter basename="/">
+    <Router>
       <Navbar />
-      <NewsList />
-    </BrowserRouter>
+      <Routes>
+        <Route path="/" element={<NewsList />} />
+        <Route path="/id" element={<Indonesia />} />
+        <Route path="/us" element={<UnitedStates />} />
+      </Routes>
+    </Router>
   )
 }
 

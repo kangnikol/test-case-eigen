@@ -21,7 +21,6 @@ const UnitedStates = () => {
   }, [])
   return (
     <>
-      <p>INI US</p>
       <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
         {articles.map((item, i) => (
           <NewsItem key={i} item={item} country="us" />
